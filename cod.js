@@ -4,11 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById('show-goal').addEventListener('click', function() {
     const goalSection = document.getElementById('goal-section');
-    if (goalSection.style.display === 'none' || goalSection.style.display === '') {
-        goalSection.style.display = 'block'; 
-        this.textContent = 'Hide Goal'; 
-    } else {
-        goalSection.style.display = 'none'; 
-        this.textContent = 'Show Goal'; 
-    }
+    const isVisible = goalSection.style.display === 'block';
+    
+    goalSection.style.display = isVisible ? 'none' : 'block';
+    this.textContent = isVisible ? 'Show Goal' : 'Hide Goal';
 });
